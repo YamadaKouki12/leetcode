@@ -1,11 +1,8 @@
-
-
-nums = [3,4,5]
-target=9
-dict = {}
-for i in range(len(nums)):
-    if target - nums[i] not in dict:
-        dict[nums[i]] = i
-    else:
-        print([i, dict[nums[i]]])
-print(0)
+s = [[" "]*5 for _ in range(5)]
+n =5
+s[1][1]='a'
+for i in range(n):
+    for j in range(n):
+        if s[i][j] != ' ':
+            print(s[i][j], end='')
+print()
