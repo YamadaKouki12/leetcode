@@ -1,7 +1,7 @@
 #
-# @lc app=leetcode id=46 lang=python3
+# @lc app=leetcode id=47 lang=python3
 #
-# [46] Permutations
+# [47] Permutations II
 #
 
 # @lc code=start
@@ -11,10 +11,15 @@ class Solution:
             res.append(path)
             return True
         for i in range(len(nums)):
+            if i>0 and nums[i]==nums[i-1]:
+                continue
             self.dfs(res,path+[nums[i]], nums[:i]+nums[i+1:])
-    def permute(self, nums: List[int]) -> List[List[int]]:
+    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
         res = []
+        nums.sort()
         for i in range(len(nums)):
+            if i>0 and nums[i-1]==nums[i]:
+                continue
             self.dfs(res, [nums[i]], nums[:i]+nums[i+1:])
         return res
 # @lc code=end
