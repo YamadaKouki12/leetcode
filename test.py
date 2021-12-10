@@ -1,3 +1,3 @@
-a = 1
-b = 5
-print(b+ a==1)
+lis = [1,2,3]
+for i in range(4):
+    print(lis.pop())
